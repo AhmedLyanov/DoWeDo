@@ -1,0 +1,36 @@
+.workspace-name-step {
+  display: flex;
+  flex-direction: column;
+}
+
+.workspace-name-step__header {
+  margin-bottom: 32px;
+}
+
+.workspace-name-step__header .typography--body {
+  margin-top: 10px;
+  color: var(--color-text-secondary);
+}
+
+
+.workspace-name-step__form {
+  display: flex;
+  flex-direction: column;
+  gap: 44px;
+}
+
+.workspace-name-step__actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+@media (max-width: 768px) {
+  .workspace-name-step__actions {
+    flex-direction: column;
+  }
+
+  .workspace-name-step__actions .button {
+    width: 100%;
+  }
+}
