@@ -40,17 +40,15 @@ const WorkspaceNameStep = ({
           label="Title your workspace"
           placeholder="Enter workspace name"
           hint="Information about the label"
-          autoComplete="off"
           value={value}
           onChange={(event) => onChange(event.target.value)}
+          autoComplete="off"
           required
         />
 
-        <div className="button-step-container">
-          <Button type="submit" size="lg">
-            Next
-          </Button>
-        </div>
+        <Button type="submit" size="lg">
+          Next
+        </Button>
       </form>
     </>
   );

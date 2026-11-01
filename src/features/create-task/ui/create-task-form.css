@@ -1,0 +1,30 @@
+.create-task-form {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+
+  width: 100%;
+}
+
+.create-task-form__input {
+  flex: 1;
+  min-width: 0;
+}
+
+.create-task-form__input > * {
+  width: 100%;
+}
+
+@media (max-width: 480px) {
+  .create-task-form {
+    flex-direction: column;
+  }
+
+  .create-task-form__input {
+    width: 100%;
+  }
+
+  .create-task-form button {
+    width: 100%;
+  }
+}

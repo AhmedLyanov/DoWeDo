@@ -1,0 +1,193 @@
+
+.home-page {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+
+  width: 100%;
+  min-height: 100%;
+  padding: 48px 40px;
+
+  background: var(--color-background-tertiary);
+}
+
+/* Header */
+
+.home-page__header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.home-page__heading {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.home-page__heading h1 {
+  color: var(--color-text-primary);
+  letter-spacing: -0.8px;
+}
+
+.home-page__heading p {
+  color: var(--color-text-secondary);
+}
+
+.home-page__header > span {
+  padding: 7px 12px;
+
+  color: var(--color-primary);
+  background: var(--color-primary-soft);
+  border-radius: var(--radius-full);
+
+  white-space: nowrap;
+}
+
+/* Workspaces */
+
+.home-page__workspaces {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  align-items: stretch;
+}
+
+/* Empty state */
+
+.home-page__empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+
+  min-height: 320px;
+  padding: 40px;
+
+  background: var(--color-background);
+  border: 1px dashed var(--color-border-secondary);
+  border-radius: var(--radius-xl);
+
+  text-align: center;
+}
+
+.home-page__empty h2 {
+  color: var(--color-text-primary);
+}
+
+.home-page__empty p {
+  max-width: 300px;
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+}
+
+.home-page__empty-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+
+  width: 64px;
+  height: 64px;
+  margin-bottom: 8px;
+
+  background: var(--color-primary-soft);
+  border-radius: 20px;
+}
+
+.home-page__empty-icon span {
+  width: 8px;
+  height: 26px;
+
+  background: var(--color-primary);
+  border-radius: var(--radius-full);
+}
+
+.home-page__empty-icon span:nth-child(2) {
+  height: 36px;
+  opacity: 0.7;
+}
+
+.home-page__empty-icon span:nth-child(3) {
+  height: 18px;
+  opacity: 0.45;
+}
+
+/* Motivation banner */
+
+.home-page__banner {
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+  min-height: 220px;
+  padding: 40px 60px;
+
+  background-image: url("../../shared/assets/media/home-bg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+}
+
+.home-page__banner h2 {
+  max-width: 320px;
+
+  color: var(--color-text-inverse);
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 1.45;
+  letter-spacing: -0.5px;
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+  .home-page {
+    gap: 26px;
+    padding: 32px 24px;
+  }
+
+  .home-page__workspaces {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 16px;
+  }
+
+  .home-page__banner {
+    min-height: 190px;
+    padding: 30px;
+  }
+
+  .home-page__banner h2 {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-page {
+    padding: 24px 16px;
+  }
+
+  .home-page__header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .home-page__workspaces {
+    grid-template-columns: 1fr;
+  }
+
+  .home-page__banner {
+    min-height: 160px;
+    padding: 24px;
+  }
+
+  .home-page__banner h2 {
+    font-size: 21px;
+  }
+}

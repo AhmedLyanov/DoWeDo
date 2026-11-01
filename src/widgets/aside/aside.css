@@ -1,0 +1,87 @@
+
+.app-aside {
+  position: sticky;
+  top: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+
+  flex-shrink: 0;
+  width: 88px;
+  height: 100vh;
+  padding: 28px 0;
+
+  background: var(--color-primary);
+}
+
+/* Home */
+
+.app-aside__brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 48px;
+  height: 48px;
+
+  color: white;
+  background: transparent;
+
+  border: 2px solid var(--color-primary);
+  border-radius: 14px;
+
+  cursor: pointer;
+
+  transition:
+    background var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.app-aside__brand:hover {
+  background: rgba(255, 255, 255, 0.12);
+  transform: scale(1.05);
+}
+
+/* Create workspace */
+
+.app-aside__create {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 52px;
+  height: 52px;
+
+  color: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.16);
+
+  border: none;
+  border-radius: 16px;
+
+  cursor: pointer;
+
+  transition:
+    background var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.app-aside__create:hover {
+  color: white;
+  background: rgba(255, 255, 255, 0.25);
+  transform: scale(1.05);
+}
+
+.app-aside__create:active,
+.app-aside__brand:active {
+  transform: scale(0.96);
+}
+
+/* Focus */
+
+.app-aside__brand:focus-visible,
+.app-aside__create:focus-visible {
+  outline: 2px solid white;
+  outline-offset: 3px;
+}

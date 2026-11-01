@@ -1,0 +1,32 @@
+.create-workspace-form {
+  width: 100%;
+  max-width: 365px;
+  animation: workspace-step-enter 0.25s ease both;
+}
+
+.create-workspace-form .create-workspace__header {
+  margin-bottom: 32px;
+}
+
+.create-workspace-form .create-workspace__header .typography--body {
+  margin-top: 10px;
+  color: var(--color-text-secondary);
+}
+
+.create-workspace-form .create-workspace__form {
+  display: flex;
+  flex-direction: column;
+  gap: 44px;
+}
+
+@keyframes workspace-step-enter {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
