@@ -3,7 +3,7 @@ import { useState, type FormEvent } from "react";
 import type { Workspace } from "@/entities/workspace";
 import { Button, Input } from "@/shared/ui";
 
-import { useCreateTask } from "../../create-task/model/use-create-task";
+import { useCreateTask } from "../model/use-create-task";
 
 import "./create-task-form.css";
 
