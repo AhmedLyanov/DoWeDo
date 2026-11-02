@@ -1,35 +1,28 @@
-# React + TypeScript + Vite
+# DoWeDo — список задач
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Небольшое приложение для организации задач по рабочим пространствам. Создайте пространство, добавляйте в него задачи и отмечайте выполненные — данные сохраняются в браузере и остаются после перезагрузки страницы.
 
-Currently, two official plugins are available:
+## Основные фичи
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Создание рабочих пространств с названием и описанием.
+- Добавление задач; пустые названия и строки из пробелов не принимаются.
+- Отметка задачи как выполненной и возврат в активные.
+- Удаление задач.
+- Фильтрация задач: все, активные и выполненные.
+- Сохранение рабочих пространств и задач в `localStorage`.
 
-## React Compiler
+## Запуск
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
 
-Note: This will impact Vite dev & build performances.
-You can also try [the experimental native React Compiler support in plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md#rust-react-compiler) by using `compiler: true` in the plugin options instead of using the Babel plugin.
-
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+```bash
+npm install
+npm run dev
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+## Технологии
+
+React, TypeScript, Vite, React Router и lucide-react.
+
+## Время выполнения
+
+Около 2 часов.
