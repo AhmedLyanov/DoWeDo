@@ -1,7 +1,9 @@
 
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import { ArrowLeft } from "lucide-react";
 
+import { ROUTE_PATH } from "@/app/router/route-path";
 import type { Workspace } from "@/entities/workspace";
 import { deleteTask, getWorkspaces, toggleTask } from "@/entities/workspace";
 import { TaskCard } from "@/entities/task";
@@ -42,9 +44,17 @@ const WorkspacePage = () => {
   if (!workspace) {
     return (
       <main className="workspace-page">
-        <Typography variant="h2">
-          Workspace not found
-        </Typography>
+        <div className="workspace-page__content">
+          <Link className="workspace-page__back" to={ROUTE_PATH.HOME}>
+            <span className="workspace-page__back-icon">
+              <ArrowLeft size={18} />
+            </span>
+            <span>На главную</span>
+          </Link>
+          <Typography variant="h2">
+            Пространство не найдено
+          </Typography>
+        </div>
       </main>
     );
   }
@@ -81,97 +91,99 @@ const WorkspacePage = () => {
 
   return (
     <main className="workspace-page">
-      <header className="workspace-page__header">
-        <div className="workspace-page__heading">
+      <div className="workspace-page__content">
+        <Link className="workspace-page__back" to={ROUTE_PATH.HOME}>
+          <span className="workspace-page__back-icon">
+            <ArrowLeft size={18} />
+          </span>
+          <span>На главную</span>
+        </Link>
+        <div className="workspace-page__intro">
           <Typography variant="h1" as="h1">
             {workspace.name}
           </Typography>
 
           <Typography variant="body" as="p">
-            {workspace.description || "Your tasks in one place."}
+            {workspace.description || "Все ваши задачи в одном месте."}
           </Typography>
         </div>
 
-        <span className="workspace-page__total">
-          {tasks.length} {tasks.length === 1 ? "task" : "tasks"}
-        </span>
-      </header>
+        <section className="workspace-page__tasks">
+          <div className="workspace-page__tasks-header">
+            <div>
+              <Typography variant="h2" as="h2">
+                Задачи
+              </Typography>
 
-      <section className="workspace-page__tasks">
-        <div className="workspace-page__tasks-header">
-          <div>
-            <Typography variant="h2" as="h2">
-              Tasks
-            </Typography>
-
-            <Typography variant="body-sm" as="p">
-              Manage your tasks in this workspace.
-            </Typography>
+              <Typography variant="body-sm" as="p">
+                Управляйте задачами в этом пространстве.
+              </Typography>
+            </div>
           </div>
-        </div>
 
-        <CreateTaskForm
-          workspaceId={workspace.id}
-          onTaskCreated={setWorkspace}
-        />
+          <CreateTaskForm
+            workspaceId={workspace.id}
+            onTaskCreated={setWorkspace}
+          />
 
-        <div className="workspace-page__filters">
-          <button
-            type="button"
-            className={`workspace-page__filter${filter === "all" ? " is-active" : ""}`}
-            onClick={() => setFilter("all")}
-          >
-            All
-            <span>{tasks.length}</span>
-          </button>
+          <div className="workspace-page__filters">
+            <button
+              type="button"
+              className={`workspace-page__filter${filter === "all" ? " is-active" : ""}`}
+              onClick={() => setFilter("all")}
+            >
+              Все
+              <span>{tasks.length}</span>
+            </button>
 
-          <button
-            type="button"
-            className={`workspace-page__filter${filter === "active" ? " is-active" : ""}`}
-            onClick={() => setFilter("active")}
-          >
-            Active
-            <span>{activeCount}</span>
-          </button>
+            <button
+              type="button"
+              className={`workspace-page__filter${filter === "active" ? " is-active" : ""}`}
+              onClick={() => setFilter("active")}
+            >
+              Активные
+              <span>{activeCount}</span>
+            </button>
 
-          <button
-            type="button"
-            className={`workspace-page__filter${filter === "completed" ? " is-active" : ""}`}
-            onClick={() => setFilter("completed")}
-          >
-            Completed
-            <span>{completedCount}</span>
-          </button>
-        </div>
-
-        {filteredTasks.length > 0 ? (
-          <div className="workspace-page__task-grid">
-            {filteredTasks.map(({ task, index }) => (
-              <TaskCard
-                key={task.id}
-                task={task}
-                index={index}
-                onToggle={() => handleToggleTask(task.id)}
-                onDelete={() => handleDeleteTask(task.id)}
-              />
-            ))}
+            <button
+              type="button"
+              className={`workspace-page__filter${filter === "completed" ? " is-active" : ""}`}
+              onClick={() => setFilter("completed")}
+            >
+              Выполненные
+              <span>{completedCount}</span>
+            </button>
           </div>
-        ) : (
-          <div className="workspace-page__empty">
-            <Typography variant="h3" as="h3">
-              {tasks.length === 0
-                ? "No tasks yet"
-                : "No tasks found"}
-            </Typography>
 
-            <Typography variant="body-sm" as="p">
-              {tasks.length === 0
-                ? "Add your first task to get started."
-                : "There are no tasks in this category."}
-            </Typography>
-          </div>
-        )}
-      </section>
+          {filteredTasks.length > 0 ? (
+            <div className="workspace-page__task-grid">
+              {filteredTasks.map(({ task, index }) => (
+                <TaskCard
+                  key={task.id}
+                  task={task}
+                  index={index}
+                  onToggle={() => handleToggleTask(task.id)}
+                  onDelete={() => handleDeleteTask(task.id)}
+                />
+              ))}
+            </div>
+          ) : (
+            <div className="workspace-page__empty">
+              <Typography variant="h3" as="h3">
+                {tasks.length === 0
+                  ? "Пока нет задач"
+                  : "Задачи не найдены"}
+              </Typography>
+
+              <Typography variant="body-sm" as="p">
+                {tasks.length === 0
+                  ? "Добавьте первую задачу, чтобы начать."
+                  : "В этой категории пока нет задач."}
+              </Typography>
+            </div>
+          )}
+        </section>
+      </div>
     </main>
   );
 };

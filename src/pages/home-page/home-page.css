@@ -11,8 +11,6 @@
   background: var(--color-background-tertiary);
 }
 
-/* Header */
-
 .home-page__header {
   display: flex;
   align-items: flex-end;
@@ -45,16 +43,12 @@
   white-space: nowrap;
 }
 
-/* Workspaces */
-
 .home-page__workspaces {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   gap: 20px;
   align-items: stretch;
 }
-
-/* Empty state */
 
 .home-page__empty {
   display: flex;
@@ -115,8 +109,6 @@
   opacity: 0.45;
 }
 
-/* Motivation banner */
-
 .home-page__banner {
   display: flex;
   align-items: center;
@@ -144,8 +136,6 @@
   letter-spacing: -0.5px;
 }
 
-/* Responsive */
-
 @media (max-width: 768px) {
   .home-page {
     gap: 26px;
@@ -153,7 +143,7 @@
   }
 
   .home-page__workspaces {
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 16px;
   }
 

@@ -16,8 +16,6 @@
   background: var(--color-primary);
 }
 
-/* Home */
-
 .app-aside__brand {
   display: flex;
   align-items: center;
@@ -43,8 +41,6 @@
   background: rgba(255, 255, 255, 0.12);
   transform: scale(1.05);
 }
-
-/* Create workspace */
 
 .app-aside__create {
   display: flex;
@@ -78,7 +74,7 @@
   transform: scale(0.96);
 }
 
-/* Focus */
+
 
 .app-aside__brand:focus-visible,
 .app-aside__create:focus-visible {

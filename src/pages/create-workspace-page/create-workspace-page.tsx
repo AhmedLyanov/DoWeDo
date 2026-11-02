@@ -8,7 +8,7 @@ const CreateWorkspacePage = () => {
     <main className="create-workspace">
       <div className="create-workspace__container">
         <section className="create-workspace__visual">
-          <img src={onboardingBg} alt="Workspace illustration" />
+          <img src={onboardingBg} alt="Иллюстрация рабочего пространства" />
         </section>
 
         <section className="create-workspace__content">

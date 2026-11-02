@@ -27,14 +27,14 @@ const CreateTaskForm = ({
     const normalizedTitle = title.trim();
 
     if (!normalizedTitle) {
-      setError("Task title cannot be empty");
+      setError("Введите название задачи");
       return;
     }
 
     const updatedWorkspace = createTask(normalizedTitle);
 
     if (!updatedWorkspace) {
-      setError("Workspace not found");
+      setError("Пространство не найдено");
       return;
     }
 
@@ -58,7 +58,7 @@ const CreateTaskForm = ({
     >
       <div className="create-task-form__input">
         <Input
-          placeholder="Enter a task..."
+          placeholder="Введите задачу..."
           value={title}
           onChange={(event) => handleChange(event.target.value)}
           error={error}
@@ -70,7 +70,7 @@ const CreateTaskForm = ({
         variant="primary"
         size="md"
       >
-        Add Task
+        Добавить задачу
       </Button>
     </form>
   );

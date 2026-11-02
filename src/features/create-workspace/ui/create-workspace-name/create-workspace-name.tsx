@@ -20,14 +20,14 @@ const WorkspaceNameStep = ({
     <>
       <header className="create-workspace__header">
         <Typography variant="h1">
-          Create A{" "}
+          Создайте{" "}
           <span className="create-workspace__title-accent">
-            Workspace.
+            пространство.
           </span>
         </Typography>
 
         <Typography variant="body">
-          Some text to fill in this space
+          Дайте пространству название, чтобы начать работу.
         </Typography>
       </header>
 
@@ -37,9 +37,9 @@ const WorkspaceNameStep = ({
       >
         <Input
           name="workspace-name"
-          label="Title your workspace"
-          placeholder="Enter workspace name"
-          hint="Information about the label"
+          label="Название пространства"
+          placeholder="Введите название"
+          hint="Например, «Личные задачи» или «Рабочий проект»"
           value={value}
           onChange={(event) => onChange(event.target.value)}
           autoComplete="off"
@@ -47,7 +47,7 @@ const WorkspaceNameStep = ({
         />
 
         <Button type="submit" size="lg">
-          Next
+          Далее
         </Button>
       </form>
     </>

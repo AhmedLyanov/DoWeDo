@@ -4,7 +4,6 @@ import { createBrowserRouter } from "react-router-dom";
 import { ROUTE_PATH } from "./route-path";
 
 import DefaultLayout from "../layouts/default/default-layout";
-import WorkspaceLayout from "../layouts/workspace/workspace-layout";
 
 import { Loader } from "@/shared/ui";
 
@@ -39,13 +38,7 @@ export const router = createBrowserRouter([
   },
   {
     path: ROUTE_PATH.WORKSPACE,
-    element: <WorkspaceLayout />,
-    children: [
-      {
-        index: true,
-        element: withSuspense(<WorkspacePage />),
-      },
-    ],
+    element: withSuspense(<WorkspacePage />),
   },
   {
     path: ROUTE_PATH.NOT_FOUND,

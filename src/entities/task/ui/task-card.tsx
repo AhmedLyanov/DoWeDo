@@ -1,5 +1,5 @@
 
-import { ArrowRight, Check, Circle, RotateCcw, Trash2 } from "lucide-react";
+import { Check, Trash2 } from "lucide-react";
 
 import type { Task } from "@/entities/task";
 
@@ -33,50 +33,42 @@ const TaskCard = ({
               task.completed ? " is-completed" : ""
             }`}
           >
-            {task.completed ? "Completed" : "Active"}
+            {task.completed ? "Выполнена" : "Активна"}
           </span>
 
           <button
             className="task-card__delete"
             type="button"
             onClick={onDelete}
-            aria-label="Delete task"
-            title="Delete task"
+            aria-label="Удалить задачу"
+            title="Удалить задачу"
           >
             <Trash2 size={15} />
           </button>
         </div>
       </div>
 
-      <p className="task-card__title">
-        {task.title}
-      </p>
-
-      <div className="task-card__footer">
+      <div className="task-card__main">
         <button
-          className="task-card__toggle"
+          className="task-card__checkbox"
           type="button"
           onClick={onToggle}
+          aria-label={
+            task.completed
+              ? "Вернуть задачу в активные"
+              : "Отметить задачу выполненной"
+          }
+          aria-pressed={task.completed}
+          title={
+            task.completed
+              ? "Вернуть задачу в активные"
+              : "Отметить задачу выполненной"
+          }
         >
-          {task.completed ? (
-            <>
-              <RotateCcw size={14} />
-              <span>Mark as active</span>
-            </>
-          ) : (
-            <>
-              <Circle size={14} />
-              <span>Mark as completed</span>
-              <ArrowRight size={14} />
-            </>
-          )}
+          {task.completed && <Check size={17} strokeWidth={2.5} />}
         </button>
 
-        {task.completed && (
-          <span className="task-card__completed-icon">
-            <Check size={13} />
-          </span>
-        )}
+        <p className="task-card__title">{task.title}</p>
       </div>
     </article>
   );

@@ -14,8 +14,8 @@ const Aside = () => {
       <button
         className="app-aside__brand"
         type="button"
-        aria-label="Go to home"
-        title="Home"
+        aria-label="На главную"
+        title="Главная"
         onClick={() => navigate(ROUTE_PATH.HOME)}
       >
         <House size={29} strokeWidth={2.2} />
@@ -24,8 +24,8 @@ const Aside = () => {
       <button
         className="app-aside__create"
         type="button"
-        aria-label="Create workspace"
-        title="Create workspace"
+        aria-label="Создать пространство"
+        title="Создать пространство"
         onClick={() => navigate(ROUTE_PATH.CREATE_WORKSPACE)}
       >
         <Plus size={28} strokeWidth={2} />

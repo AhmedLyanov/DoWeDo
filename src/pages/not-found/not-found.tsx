@@ -5,7 +5,7 @@ const NotFoundPage = () => {
   return (
     <main>
       <h1>404</h1>
-      <Link to={ROUTE_PATH.HOME}>Go home</Link>
+      <Link to={ROUTE_PATH.HOME}>На главную</Link>
     </main>
   );
 };

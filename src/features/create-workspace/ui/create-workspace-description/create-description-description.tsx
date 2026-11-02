@@ -24,11 +24,11 @@ const WorkspaceDescriptionStep = ({
     <>
       <header className="create-workspace__header">
         <Typography variant="h1">
-          Describe Workspace.
+          Опишите пространство.
         </Typography>
 
         <Typography variant="body">
-          Description of what your workspace is for.
+          Расскажите, для чего предназначено это пространство.
         </Typography>
       </header>
 
@@ -38,13 +38,13 @@ const WorkspaceDescriptionStep = ({
       >
         <div className="workspace-description__field">
           <Typography variant="body">
-            Textarea
+            Описание
           </Typography>
 
           <textarea
             name="workspace-description"
             className="workspace-description__textarea"
-            placeholder="Type your content here...."
+            placeholder="Введите описание..."
             value={value}
             onChange={(event) => onChange(event.target.value)}
           />
@@ -52,11 +52,11 @@ const WorkspaceDescriptionStep = ({
 
         <div className="workspace-description__actions">
           <Button type="button" onClick={onBack}>
-            Back
+            Назад
           </Button>
 
           <Button type="submit">
-            Create Workspace
+            Создать пространство
           </Button>
         </div>
       </form>

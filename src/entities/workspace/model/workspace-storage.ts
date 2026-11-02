@@ -20,8 +20,6 @@ export const saveWorkspaces = (workspaces: Workspace[]): void => {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(workspaces));
 };
 
-// Create task
-
 export const createTask = (
   workspaceId: string,
   title: string,
@@ -58,8 +56,6 @@ export const createTask = (
   return updatedWorkspace;
 };
 
-// Toggle task
-
 export const toggleTask = (
   workspaceId: string,
   taskId: string,
@@ -95,8 +91,6 @@ export const toggleTask = (
 
   return updatedWorkspace;
 };
-
-// Delete task
 
 export const deleteTask = (
   workspaceId: string,

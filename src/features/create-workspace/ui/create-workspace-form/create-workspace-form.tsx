@@ -8,7 +8,6 @@ import WorkspaceDescriptionStep from "../create-workspace-description/create-des
 
 import { useCreateWorkspace } from "../../model/use-create-worksapce";
 
-const { createWorkspace } = useCreateWorkspace();
 
 interface WorkspaceFormData {
   name: string;
@@ -17,6 +16,8 @@ interface WorkspaceFormData {
 
 const CreateWorkspaceForm = () => {
   const [step, setStep] = useState<1 | 2>(1);
+  const { createWorkspace } = useCreateWorkspace();
+
   const navigate = useNavigate();
 
   const [formData, setFormData] = useState<WorkspaceFormData>({
@@ -43,6 +44,7 @@ const CreateWorkspaceForm = () => {
 
   const handleCreate = () => {
     const workspace = createWorkspace(formData);
+
 
     navigate(`/workspace/${workspace.id}`);
   };

@@ -2,10 +2,11 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+import { ROUTE_PATH } from "@/app/router/route-path";
 import type { Workspace } from "@/entities/workspace";
 import { getWorkspaces } from "@/entities/workspace/model/workspace-storage";
 import WorkspaceCard from "@/entities/workspace/ui/workspace-card/workspace-card";
-import { Typography } from "@/shared/ui";
+import { Button, Typography } from "@/shared/ui";
 
 import "./home-page.css";
 
@@ -22,17 +23,16 @@ const HomePage = () => {
       <header className="home-page__header">
         <div className="home-page__heading">
           <Typography variant="h1" as="h1">
-            Your Workspaces
+            Ваши пространства
           </Typography>
 
           <Typography variant="body" as="p">
-            Everything you need to stay organized and get things done.
+            Всё необходимое, чтобы поддерживать порядок и справляться с делами.
           </Typography>
         </div>
 
         <Typography variant="caption" as="span">
-          {workspaces.length}{" "}
-          {workspaces.length === 1 ? "workspace" : "workspaces"}
+          Рабочих пространств: {workspaces.length}
         </Typography>
       </header>
 
@@ -55,20 +55,27 @@ const HomePage = () => {
           </div>
 
           <Typography variant="h3" as="h2">
-            No workspaces yet
+            Пока нет рабочих пространств
           </Typography>
 
           <Typography variant="body-sm" as="p">
-            Create your first workspace to start organizing your tasks.
+            Создайте первое пространство, чтобы упорядочить свои задачи.
           </Typography>
+
+          <Button
+            type="button"
+            onClick={() => navigate(ROUTE_PATH.CREATE_WORKSPACE)}
+          >
+            Создать пространство
+          </Button>
         </section>
       )}
 
       <section className="home-page__banner">
         <Typography variant="h2" as="h2">
-          Motivation to help
+          Пусть ничто не мешает
           <br />
-          you work.
+          продуктивной работе.
         </Typography>
       </section>
     </main>
